@@ -10,7 +10,7 @@ def add_task(entry, listbox):
         listbox.insert(tk.END, task)
         entry.delete(0, tk.END)
     else:
-        messagebox.showwarning("An empty task", "Please enter the task!")
+        messagebox.showwarning("Пустая задача", "Пожалуйста, введите задачу!")
 
 def delete_task(listbox):
     try:
@@ -79,17 +79,17 @@ def main():
 
     # Создание выпадающего меню "Тема"
     theme_menu = tk.Menu(menubar, tearoff=0)
-    menubar.add_cascade(label="Theme", menu=theme_menu)
-    theme_menu.add_command(label="Black", command=lambda: change_theme(window, "Dark", label, label2, listbox, entry, add_button, delete_button, clear_button, open_button, export_button))
-    theme_menu.add_command(label="Light", command=lambda: change_theme(window, "Light", label, label2, listbox, entry, add_button, delete_button, clear_button, open_button, export_button))
+    menubar.add_cascade(label="Тема", menu=theme_menu)
+    theme_menu.add_command(label="Темная", command=lambda: change_theme(window, "Dark", label, label2, listbox, entry, add_button, delete_button, clear_button, open_button, export_button))
+    theme_menu.add_command(label="Светлая", command=lambda: change_theme(window, "Light", label, label2, listbox, entry, add_button, delete_button, clear_button, open_button, export_button))
 
     # Создание кнопки "Выход"
-    menubar.add_command(label="Exit", command=window.quit)
+    menubar.add_command(label="Выход", command=window.quit)
 
     # Создание кнопки "Выход"
-    menubar.add_command(label="Developer: Tailogs")
+    menubar.add_command(label="Разработчик: Tailogs")
 
-    label = tk.Label(window, text="Task list:", fg='white', bg='#222222', font=('Arial', 14, 'bold'))
+    label = tk.Label(window, text="Список задач:", fg='white', bg='#222222', font=('Arial', 14, 'bold'))
     label.grid(row=0, column=0, pady=(10, 0))
 
     listbox = tk.Listbox(window)
@@ -97,7 +97,7 @@ def main():
                       font=('Arial', 12), bd=0)
     listbox.grid(row=1, column=0, rowspan=5, padx=10, pady=(5, 0))
 
-    label2 = tk.Label(window, text='Add task:', fg='white', bg='#222222', font=('Arial', 12, 'bold'))
+    label2 = tk.Label(window, text='Добавить задачу:', fg='white', bg='#222222', font=('Arial', 12, 'bold'))
     label2.grid(row=0, column=1, pady=(10, 0), padx=(0, 5))
 
     entry = tk.Entry(window, bg='#444444', fg='white', selectbackground='#666666', selectforeground='white')
@@ -112,27 +112,27 @@ def main():
     entry.bind("<Return>", bind_enter)
     entry.focus()
     
-    add_button = tk.Button(window, text="Add task", command=lambda: add_task(entry, listbox),
+    add_button = tk.Button(window, text="Добавить задачу", command=lambda: add_task(entry, listbox),
                            relief=tk.FLAT, bg='#555555', fg='white', activebackground='#666666',
                            activeforeground='white', font=('Arial', 10))
     add_button.grid(row=2, column=1, padx=(0, 5), pady=5, sticky='w')
 
-    delete_button = tk.Button(window, text="Delete", command=lambda: delete_task(listbox),
+    delete_button = tk.Button(window, text="Удалить", command=lambda: delete_task(listbox),
                               relief=tk.FLAT, bg='#555555', fg='white', activebackground='#666666',
                               activeforeground='white', font=('Arial', 10))
     delete_button.grid(row=3, column=1, sticky='w', padx=(0, 5))
 
-    clear_button = tk.Button(window, text="Clear", command=lambda: clear_tasks(listbox),
+    clear_button = tk.Button(window, text="Очистить всё", command=lambda: clear_tasks(listbox),
                              relief=tk.FLAT, bg='#555555', fg='white', activebackground='#666666',
                              activeforeground='white', font=('Arial', 10))
     clear_button.grid(row=6, column=0, pady=(5, 0), sticky='w', padx=10)
 
-    open_button = tk.Button(window, text="Open file", command=lambda: open_file(listbox),
+    open_button = tk.Button(window, text="Открыть файл", command=lambda: open_file(listbox),
                             relief=tk.FLAT, bg='#555555', fg='white', activebackground='#666666',
                             activeforeground='white', font=('Arial', 10))
     open_button.grid(row=4, column=1, sticky='w', padx=(0, 5))
 
-    export_button = tk.Button(window, text="Export file", command=lambda: export_file(listbox),
+    export_button = tk.Button(window, text="Экспорт файла", command=lambda: export_file(listbox),
                               relief=tk.FLAT, bg='#555555', fg='white', activebackground='#666666',
                               activeforeground='white', font=('Arial', 10))
     export_button.grid(row=5, column=1, sticky='w', padx=(0, 5))

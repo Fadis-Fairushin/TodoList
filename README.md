@@ -1,9 +1,9 @@
 # TodoLis
 
-TodoList - is my task scheduler
+TodoList — мой планировщик задач
 
 ---
 
-![Screenshot program](image.png)
+![Скриншот программы](image.png)
 
-*Figure 1. Screenshot of the program*
+*Рисунок 1. Скриншот программы*
